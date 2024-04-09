@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='interaction_discord_bot',
-    version='0.1.4',
+    name="interaction_discord_bot",
+    version="0.1.4",
     packages=find_packages(),
     install_requires=[
-        'nextcord',
+        "nextcord",
     ],
-    description='cog for discord bot interaction with user',
-    author='Appez',
+    description="cog for discord bot interaction with user",
+    author="Appez",
 )
