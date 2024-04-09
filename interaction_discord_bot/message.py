@@ -1,7 +1,7 @@
 from nextcord.ext import commands
 from nextcord import slash_command
 
-from modal.speakModal import SpeakModal
+from interaction_discord_bot.modal.speakModal import SpeakModal
 
 class Interaction(commands.Cog):
     """Admin cmd"""
