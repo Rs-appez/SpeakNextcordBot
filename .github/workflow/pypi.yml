@@ -1,3 +1,9 @@
+name: Pypi Deploy
+on: 
+  push:
+    branches:
+      - main
+
 jobs:
   release-build:
     runs-on: ubuntu-latest
