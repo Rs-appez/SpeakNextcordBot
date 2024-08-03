@@ -1,11 +1,10 @@
 from nextcord.ext import commands
 from nextcord import slash_command
-
 from interaction_discord_bot.modal.speakModal import SpeakModal
 
 
 class Interaction(commands.Cog):
-    """Admin cmd"""
+    """Message command for admin"""
 
     def __init__(self, bot):
         self.bot = bot
@@ -25,3 +24,6 @@ class Interaction(commands.Cog):
             await interaction.response.send_modal(
                 SpeakModal(self.bot, interaction.channel.id)
             )
+        
+def setup(bot):
+    bot.add_cog(Interaction(bot))
