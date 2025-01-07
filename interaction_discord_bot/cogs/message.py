@@ -3,13 +3,14 @@ from nextcord import slash_command
 from interaction_discord_bot.modal.speakModal import SpeakModal
 from interaction_discord_bot.modal.updateModal import UpdateModal
 
+from nextcord import InteractionContextType
 class Interaction(commands.Cog):
     """Message command for admin"""
 
     def __init__(self, bot):
         self.bot = bot
 
-    @slash_command(description="🎙️", dm_permission=False, default_member_permissions=0)
+    @slash_command(description="🎙️",contexts=[InteractionContextType.guild], default_member_permissions=0)
     async def speak(self, interaction, message: str = None):
         """Send a message in a channel"""
         if message:
@@ -25,7 +26,7 @@ class Interaction(commands.Cog):
                 SpeakModal(self.bot, interaction.channel.id)
             )
 
-    @slash_command(description="🔧🎙️", dm_permission=False, default_member_permissions=0)
+    @slash_command(description="🔧🎙️", contexts=[InteractionContextType.guild], default_member_permissions=0)
     async def update_speak(self, interaction, message_id: str):
         """Update a message in a channel"""
         try:
