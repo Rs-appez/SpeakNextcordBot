@@ -9,7 +9,7 @@ charset-normalizer==3.3.2
 cryptography==42.0.5
 docutils==0.20.1
 frozenlist==1.4.1
-idna==3.6
+idna==3.7
 importlib_metadata==7.1.0
 jaraco.classes==3.4.0
 jaraco.context==5.1.0
