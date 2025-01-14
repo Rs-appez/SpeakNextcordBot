@@ -36,7 +36,7 @@ requests-toolbelt==1.0.0
 rfc3986==2.0.0
 rich==13.9.4
 SecretStorage==3.3.3
-setuptools==75.7.0
+setuptools==75.8.0
 tomli==2.2.1
 twine==6.0.1
 typing_extensions==4.12.2
