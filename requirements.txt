@@ -19,7 +19,7 @@ jeepney==0.8.0
 keyring==25.6.0
 markdown-it-py==3.0.0
 mdurl==0.1.2
-more-itertools==10.5.0
+more-itertools==10.6.0
 multidict==6.1.0
 nextcord==3.0.1
 nh3==0.2.20
