@@ -2,6 +2,7 @@ from nextcord.ext import commands
 from nextcord import slash_command
 from interaction_discord_bot.modal.speakModal import SpeakModal
 from interaction_discord_bot.modal.updateModal import UpdateModal
+from interaction_discord_bot.modal.replyModal import ReplyModal
 
 from nextcord import InteractionContextType
 
@@ -42,6 +43,19 @@ class Interaction(commands.Cog):
         try:
             message = await interaction.channel.fetch_message(message_id)
             await interaction.response.send_modal(UpdateModal(self.bot, message))
+        except Exception as e:
+            await interaction.response.send_message(f"Error : {e}", ephemeral=True)
+
+    @slash_command(
+        description="💬",
+        contexts=[InteractionContextType.guild],
+        default_member_permissions=0,
+    )
+    async def reply(self, interaction, message_id: str):
+        """Reply to a message in a channel"""
+        try:
+            message = await interaction.channel.fetch_message(message_id)
+            await interaction.response.send_modal(ReplyModal(message))
         except Exception as e:
             await interaction.response.send_message(f"Error : {e}", ephemeral=True)
 
