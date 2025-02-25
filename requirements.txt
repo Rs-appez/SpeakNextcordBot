@@ -1,5 +1,5 @@
 aiohappyeyeballs==2.4.6
-aiohttp==3.11.12
+aiohttp==3.11.13
 aiosignal==1.3.2
 async-timeout==5.0.1
 attrs==25.1.0
@@ -24,8 +24,8 @@ multidict==6.1.0
 nextcord==3.0.1
 nh3==0.2.20
 packaging==24.2
-pkginfo==1.12.0
-propcache==0.2.1
+pkginfo==1.12.1.2
+propcache==0.3.0
 pycparser==2.22
 Pygments==2.19.1
 pyproject_hooks==1.2.0
