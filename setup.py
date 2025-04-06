@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="interaction_discord_bot",
-    version="0.2.00",
+    version="0.2.01",
     packages=find_packages(),
     install_requires=[
         "nextcord",
