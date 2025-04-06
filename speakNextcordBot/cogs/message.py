@@ -1,8 +1,8 @@
 from nextcord.ext import commands
 from nextcord import slash_command
-from interaction_discord_bot.modal.speakModal import SpeakModal
-from interaction_discord_bot.modal.updateModal import UpdateModal
-from interaction_discord_bot.modal.replyModal import ReplyModal
+from speakNextcordBot.modal.speakModal import SpeakModal
+from speakNextcordBot.modal.updateModal import UpdateModal
+from speakNextcordBot.modal.replyModal import ReplyModal
 
 from nextcord import InteractionContextType
 

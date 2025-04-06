@@ -1,7 +1,7 @@
 #!venv/bin/python3
 from nextcord.ext import commands
 import config
-from interaction_discord_bot.init_cog import init_cog
+from speakNextcordBot.init_cog import init_cog
 
 bot = commands.Bot()
 
