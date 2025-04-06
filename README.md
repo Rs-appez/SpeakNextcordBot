@@ -1,7 +1,7 @@
 # SpeakNextcordBot
 ![Version](https://img.shields.io/pypi/v/SpeakNextcordBot?color=blue) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/SpeakNextcordBot)
 
-A python package for adding speak interaction slash command to a [Nextcord](https://github.com/nextcord/nextcord) bot
+A python package for adding speak interaction slash commands to a [Nextcord](https://github.com/nextcord/nextcord) bot
 
 ## Key Features
 
@@ -12,6 +12,8 @@ A python package for adding speak interaction slash command to a [Nextcord](http
   * ```/reply``` to make your bot reply to a message
 
 ## Usage
+
+*By default all slash commands are only available for server admin*
 
 * ### The speak command
      Enter your message in the ```message``` parameter :  
