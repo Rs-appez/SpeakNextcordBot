@@ -1,5 +1,5 @@
 # SpeakNextcordBot
-![Version](https://img.shields.io/pypi/v/interaction_discord_bot?color=blue) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/interaction_discord_bot)
+![Version](https://img.shields.io/pypi/v/SpeakNextcordBot?color=blue) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/SpeakNextcordBot)
 
 A python package for adding speak interaction slash command to a [Nextcord](https://github.com/nextcord/nextcord) bot
 
