@@ -19,7 +19,6 @@ setup(
     url="https://github.com/Rs-appez/interaction_discord_bot",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
@@ -27,5 +26,5 @@ setup(
     ],
     python_requires=">=3.12",
     keywords="discord bot slash_command interaction speak",
-    license="GPL-3.0",
+    license="GPL-3.0-only",
 )
