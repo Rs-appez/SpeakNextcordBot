@@ -17,7 +17,7 @@ A python package for adding basic interaction slash command to a discord bot ( w
      Enter your message in the ```message``` parameter :  
      ![image](https://github.com/user-attachments/assets/9966647d-a425-4110-a0e3-1e26f7cc779c)  
      If no message is provided, a modal is open to enter your message *(recommended for formated messages)*  
-     *You can also edit the channel id, if you want send your message in another channel (default is the current channel)*
+     *You can also edit the channel id, if you want send your message in another channel (default is the current channel)*  
      ![image](https://github.com/user-attachments/assets/c5270ca0-63d2-4e80-b4c5-d47c76c19960)
 
 * ### The update_speak command
