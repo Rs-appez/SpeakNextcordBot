@@ -12,10 +12,10 @@ A python package for adding basic interaction slash command to a discord bot ( w
 
 ## Requirements
 
-* Python 3.12 or higher is requirerd
+* Python 3.12 or higher is required
 * [Nextcord](https://github.com/nextcord/nextcord) 3.0.1 or higher is required
 
-## Instalation
+## Installation
 
 Using pip :
 
@@ -23,8 +23,8 @@ Using pip :
 pip install interaction-discord-bot
 ```
 
-## Simple exemple how to setup
-
+## Setup
+**Simple example how to setup**
 Call init_cog() with your bot in argument :
 
 ```py
