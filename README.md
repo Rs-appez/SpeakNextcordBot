@@ -46,7 +46,7 @@ pip install SpeakNextcordBot
 ```
 
 ## Setup
-**Simple example how to setup**
+**Simple setup example**  
 Call init_cog() with your bot in argument :
 
 ```py
