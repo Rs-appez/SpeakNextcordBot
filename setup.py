@@ -5,13 +5,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="interaction_discord_bot",
-    version="0.2.01",
+    name="SpeakNextcordBot",
+    version="0.2.2",
     packages=find_packages(),
     install_requires=[
         "nextcord",
     ],
-    description="A python package for adding basic interaction slash command to a discord bot",
+    description="A python package for adding speak interaction slash command to a Nextcord bot",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Appez",
