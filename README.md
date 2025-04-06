@@ -40,7 +40,7 @@ A python package for adding speak interaction slash command to a [Nextcord](http
 Using pip :
 
 ```
-pip install interaction-discord-bot
+pip install SpeakNextcordBot
 ```
 
 ## Setup
@@ -49,7 +49,7 @@ Call init_cog() with your bot in argument :
 
 ```py
 from nextcord.ext import commands
-from interaction_discord_bot.init_cog import init_cog
+from speakNextcordBot.init_cog import init_cog
 
 bot = commands.Bot()
 
