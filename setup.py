@@ -1,5 +1,9 @@
 from setuptools import setup, find_packages
 
+
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
 setup(
     name="interaction_discord_bot",
     version="0.2.00",
@@ -7,6 +11,21 @@ setup(
     install_requires=[
         "nextcord",
     ],
-    description="cog for discord bot interaction with user",
+    description="A python package for adding basic interaction slash command to a discord bot",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     author="Appez",
+    author_email="appez@appez.cafe",
+    url="https://github.com/Rs-appez/interaction_discord_bot",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        "Operating System :: OS Independent",
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+    ],
+    python_requires=">=3.12",
+    keywords="discord bot slash_command interaction speak",
+    license="GPL-3.0",
 )
