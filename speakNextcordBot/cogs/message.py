@@ -4,7 +4,11 @@ from speakNextcordBot.modal.speakModal import SpeakModal
 from speakNextcordBot.modal.updateModal import UpdateModal
 from speakNextcordBot.modal.replyModal import ReplyModal
 
-from nextcord import InteractionContextType, Interaction as NextcordInteraction
+from nextcord import (
+    InteractionContextType,
+    SlashOption,
+    Interaction as NextcordInteraction,
+)
 
 
 class Interaction(commands.Cog):
@@ -31,7 +35,15 @@ class Interaction(commands.Cog):
         contexts=[InteractionContextType.guild],
         default_member_permissions=0,
     )
-    async def speak(self, interaction: NextcordInteraction, message: str = None):
+    async def speak(
+        self,
+        interaction: NextcordInteraction,
+        message: str = SlashOption(
+            description="Message to send",
+            required=False,
+            default=None,
+        ),
+    ):
         """Send a message in a channel"""
         if message:
             try:
@@ -51,7 +63,13 @@ class Interaction(commands.Cog):
         contexts=[InteractionContextType.guild],
         default_member_permissions=0,
     )
-    async def update_speak(self, interaction: NextcordInteraction, message_id: str):
+    async def update_speak(
+        self,
+        interaction: NextcordInteraction,
+        message_id: str = SlashOption(
+            description="Message ID to update",
+        ),
+    ):
         """Update a message in a channel"""
         try:
             message = await interaction.channel.fetch_message(message_id)
@@ -64,7 +82,11 @@ class Interaction(commands.Cog):
         contexts=[InteractionContextType.guild],
         default_member_permissions=0,
     )
-    async def reply(self, interaction: NextcordInteraction, message_id: str):
+    async def reply(
+        self,
+        interaction: NextcordInteraction,
+        message_id: str = SlashOption(description="Message ID to reply to"),
+    ):
         """Reply to a message in a channel"""
         try:
             message = await interaction.channel.fetch_message(message_id)
@@ -78,7 +100,16 @@ class Interaction(commands.Cog):
         default_member_permissions=0,
     )
     async def add_vote(
-        self, interaction: NextcordInteraction, message_id: str, number: int
+        self,
+        interaction: NextcordInteraction,
+        message_id: str = SlashOption(
+            description="Message ID to add a vote to",
+        ),
+        number: int = SlashOption(
+            description="Number of votes to add (1-10)",
+            min_value=1,
+            max_value=10,
+        ),
     ):
         """Add a vote to a message in a channel"""
         if number < 1 or number > 10:
@@ -100,7 +131,13 @@ class Interaction(commands.Cog):
         contexts=[InteractionContextType.guild],
         default_member_permissions=0,
     )
-    async def remove_vote(self, interaction: NextcordInteraction, message_id: str):
+    async def remove_vote(
+        self,
+        interaction: NextcordInteraction,
+        message_id: str = SlashOption(
+            description="Message ID to remove votes from",
+        ),
+    ):
         """Remove all votes from a message in a channel"""
         try:
             message = await interaction.channel.fetch_message(message_id)
