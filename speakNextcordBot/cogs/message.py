@@ -10,6 +10,19 @@ from nextcord import InteractionContextType, Interaction as NextcordInteraction
 class Interaction(commands.Cog):
     """Message command for admin"""
 
+    vote_emoji = {
+        1: "1️⃣",
+        2: "2️⃣",
+        3: "3️⃣",
+        4: "4️⃣",
+        5: "5️⃣",
+        6: "6️⃣",
+        7: "7️⃣",
+        8: "8️⃣",
+        9: "9️⃣",
+        10: "🔟",
+    }
+
     def __init__(self, bot):
         self.bot = bot
 
@@ -56,6 +69,29 @@ class Interaction(commands.Cog):
         try:
             message = await interaction.channel.fetch_message(message_id)
             await interaction.response.send_modal(ReplyModal(message))
+        except Exception as e:
+            await interaction.response.send_message(f"Error : {e}", ephemeral=True)
+
+    @slash_command(
+        description="Vote 🔢",
+        contexts=[InteractionContextType.guild],
+        default_member_permissions=0,
+    )
+    async def add_vote(
+        self, interaction: NextcordInteraction, message_id: str, number: int
+    ):
+        """Add a vote to a message in a channel"""
+        if number < 1 or number > 10:
+            await interaction.response.send_message(
+                "Number must be between 1 and 10", ephemeral=True
+            )
+            return
+        try:
+            message = await interaction.channel.fetch_message(message_id)
+            await interaction.response.defer(ephemeral=True, with_message=True)
+            for i in range(1, number + 1):
+                await message.add_reaction(self.vote_emoji.get(i))
+            await interaction.followup.send("Vote added !", ephemeral=True)
         except Exception as e:
             await interaction.response.send_message(f"Error : {e}", ephemeral=True)
 
