@@ -5,11 +5,14 @@ A python package for adding speak interaction slash commands to a [Nextcord](htt
 
 ## Key Features
 
-**The package provides 3 features :**
+**The package provides 5 features :**
 
   * ```/speak``` to make your bot send message in a channel
   * ```/update_speak``` to edit a message send by your bot
   * ```/reply``` to make your bot reply to a message
+
+  * ```/add_vote``` to add a number of vote reaction
+  * ```/remove_vote``` to remove all votes reactions
 
 ## Usage
 
@@ -31,6 +34,10 @@ A python package for adding speak interaction slash commands to a [Nextcord](htt
      Enter the id of the message you want your bot to reply :    
      ![image](https://github.com/user-attachments/assets/1da546a0-aac1-4636-a351-5b5f4b5eaaef)  
      A modal will open, allowing you to enter the reply message.
+
+* ### The add_vote command
+     Enter the id of the message you want add reaction vote and the number of reaction you want (between 1-10)  
+    ![image](https://github.com/user-attachments/assets/1e8f4676-337d-4e43-93f5-ee97675e2ad7)
 
 ## Requirements
 
