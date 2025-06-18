@@ -95,6 +95,23 @@ class Interaction(commands.Cog):
         except Exception as e:
             await interaction.response.send_message(f"Error : {e}", ephemeral=True)
 
+    @slash_command(
+        description="Remove votes",
+        contexts=[InteractionContextType.guild],
+        default_member_permissions=0,
+    )
+    async def remove_vote(self, interaction: NextcordInteraction, message_id: str):
+        """Remove all votes from a message in a channel"""
+        try:
+            message = await interaction.channel.fetch_message(message_id)
+            await interaction.response.defer(ephemeral=True, with_message=True)
+            for reaction in message.reactions:
+                if reaction.emoji in self.vote_emoji.values():
+                    await message.clear_reaction(reaction.emoji)
+            await interaction.followup.send("Votes removed !", ephemeral=True)
+        except Exception as e:
+            await interaction.response.send_message(f"Error : {e}", ephemeral=True)
+
 
 def setup(bot):
     bot.add_cog(Interaction(bot))
