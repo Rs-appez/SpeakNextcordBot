@@ -4,7 +4,7 @@ from speakNextcordBot.modal.speakModal import SpeakModal
 from speakNextcordBot.modal.updateModal import UpdateModal
 from speakNextcordBot.modal.replyModal import ReplyModal
 
-from nextcord import InteractionContextType
+from nextcord import InteractionContextType, Interaction as NextcordInteraction
 
 
 class Interaction(commands.Cog):
@@ -18,7 +18,7 @@ class Interaction(commands.Cog):
         contexts=[InteractionContextType.guild],
         default_member_permissions=0,
     )
-    async def speak(self, interaction, message: str = None):
+    async def speak(self, interaction: NextcordInteraction, message: str = None):
         """Send a message in a channel"""
         if message:
             try:
@@ -38,7 +38,7 @@ class Interaction(commands.Cog):
         contexts=[InteractionContextType.guild],
         default_member_permissions=0,
     )
-    async def update_speak(self, interaction, message_id: str):
+    async def update_speak(self, interaction: NextcordInteraction, message_id: str):
         """Update a message in a channel"""
         try:
             message = await interaction.channel.fetch_message(message_id)
@@ -51,7 +51,7 @@ class Interaction(commands.Cog):
         contexts=[InteractionContextType.guild],
         default_member_permissions=0,
     )
-    async def reply(self, interaction, message_id: str):
+    async def reply(self, interaction: NextcordInteraction, message_id: str):
         """Reply to a message in a channel"""
         try:
             message = await interaction.channel.fetch_message(message_id)
