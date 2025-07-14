@@ -1,10 +1,10 @@
 aiohappyeyeballs==2.6.1
-aiohttp==3.12.13
+aiohttp==3.12.14
 aiosignal==1.4.0
 async-timeout==5.0.1
 attrs==25.3.0
 build==1.2.2.post1
-certifi==2025.6.15
+certifi==2025.7.14
 cffi==1.17.1
 charset-normalizer==3.4.2
 cryptography==45.0.5
