@@ -22,7 +22,7 @@ mdurl==0.1.2
 more-itertools==10.7.0
 multidict==6.6.3
 nextcord==3.1.0
-nh3==0.2.21
+nh3==0.3.0
 packaging==25.0
 pkginfo==1.12.1.2
 propcache==0.3.2
