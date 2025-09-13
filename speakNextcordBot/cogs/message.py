@@ -117,14 +117,15 @@ class Interaction(commands.Cog):
                 "Number must be between 1 and 10", ephemeral=True
             )
             return
+
+        await interaction.response.defer(ephemeral=True, with_message=True)
         try:
             message = await interaction.channel.fetch_message(message_id)
-            await interaction.response.defer(ephemeral=True, with_message=True)
             for i in range(1, number + 1):
                 await message.add_reaction(self.vote_emoji.get(i))
             await interaction.followup.send("Vote added !", ephemeral=True)
         except Exception as e:
-            await interaction.response.send_message(f"Error : {e}", ephemeral=True)
+            await interaction.followup.send(f"Error : {e}", ephemeral=True)
 
     @slash_command(
         description="Remove votes",
@@ -139,15 +140,15 @@ class Interaction(commands.Cog):
         ),
     ):
         """Remove all votes from a message in a channel"""
+        await interaction.response.defer(ephemeral=True, with_message=True)
         try:
             message = await interaction.channel.fetch_message(message_id)
-            await interaction.response.defer(ephemeral=True, with_message=True)
             for reaction in message.reactions:
                 if reaction.emoji in self.vote_emoji.values():
                     await message.clear_reaction(reaction.emoji)
             await interaction.followup.send("Votes removed !", ephemeral=True)
         except Exception as e:
-            await interaction.response.send_message(f"Error : {e}", ephemeral=True)
+            await interaction.followup.send(f"Error : {e}", ephemeral=True)
 
 
 def setup(bot):
