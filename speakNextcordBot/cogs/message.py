@@ -86,11 +86,20 @@ class Interaction(commands.Cog):
         self,
         interaction: NextcordInteraction,
         message_id: str = SlashOption(description="Message ID to reply to"),
+        reply: str = SlashOption(
+            description="Message to send as a reply",
+            required=False,
+            default=None,
+        ),
     ):
         """Reply to a message in a channel"""
         try:
             message = await interaction.channel.fetch_message(message_id)
-            await interaction.response.send_modal(ReplyModal(message))
+            if not reply:
+                await interaction.response.send_modal(ReplyModal(message))
+            else:
+                await message.reply(reply)
+                await interaction.response.send_message("I replied", ephemeral=True)
         except Exception as e:
             await interaction.response.send_message(f"Error : {e}", ephemeral=True)
 
