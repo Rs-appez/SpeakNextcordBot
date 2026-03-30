@@ -27,7 +27,7 @@ packaging==26.0
 pkginfo==1.12.1.2
 propcache==0.4.1
 pycparser==3.0
-Pygments==2.19.2
+Pygments==2.20.0
 pyproject_hooks==1.2.0
 python-decouple==3.8
 readme_renderer==44.0
