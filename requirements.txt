@@ -3,10 +3,10 @@ aiohttp==3.14.1
 aiosignal==1.4.0
 async-timeout==5.0.1
 attrs==26.1.0
-build==1.5.0
+build==1.5.1
 certifi==2026.6.17
-cffi==2.0.0
-charset-normalizer==3.4.7
+cffi==2.1.0
+charset-normalizer==3.4.9
 cryptography==49.0.0
 docutils==0.23
 frozenlist==1.8.0
